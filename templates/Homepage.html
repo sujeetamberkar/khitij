@@ -1,0 +1,350 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title>The E-Library Enclave</title>
+        <style>
+            #nb {
+                border-radius:25px;
+            }
+            #signup{
+              padding: auto;  
+                
+            }
+            #login{
+                padding: auto;
+            }
+            body{
+                background-image: url("moninn.jpg");
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin: 0;
+            }
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+                position: -webkit-sticky;
+                position: sticky;
+                top: 0;
+                border-radius: 10px;
+            }
+            li{
+                float: left;
+            }
+            li a{
+                display: block;
+                color:#DDDBCB;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            li a:hover{
+                background-color: #111;
+            }
+            li a:hover:not(.active) {
+                background-color:#818589;
+            }
+            .active{
+                background-color:#008080;
+            }
+            .header-content{
+                position: absolute;
+                top: 30%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                margin-top: 100px;
+                color:#DDDBCB;
+            }
+            .header-content h1{
+                font-size: 50px;
+                line-height: 20px;
+                font-weight: 600;
+                max-width: 650px;
+                font-family: Arial;
+                animation: fadeIn 4s;
+                -webkit-animation: fadeIn 4s;
+                -moz-animation: fadeIn 4s;
+                -o-animation: fadeIn 4s;
+                -ms-animation: fadeIn 4s;
+            }
+            .header-content h3{
+                font-family: Arial;
+                animation: fadeIn 8s;
+                -webkit-animation: fadeIn 8s;
+                -moz-animation: fadeIn 8s;
+                -o-animation: fadeIn 8s;
+                -ms-animation: fadeIn 8s;
+            }
+            .search-input{
+                font-size: 16px;
+                padding: 15px 30px;
+                border-radius: 5px;
+            }
+            .searchbut{
+                background:#008080;
+                border: 0;
+                outline: 0;
+                color:#DDDBCB;
+                font-size: 16px;
+                cursor:pointer;
+                padding: 15px 30px;
+                border-radius: 5px;
+            }
+            @keyframes fadeIn {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+            @-moz-keyframes fadeIn {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+            @-webkit-keyframes fadeIn {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+            @-o-keyframes fadeIn {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+            @-ms-keyframes fadeIn {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+            .features{
+                padding: 800px 12%;
+                padding-bottom: 0px;
+                font-size: 22px;
+            }
+            .features1{
+                padding: 50px 12%;
+                font-size: 22px;
+            }
+            .features2{
+                padding: 50px 12%;
+                font-size: 22px;
+            }
+            .row{
+                display: flex;
+                width: 100%;
+                align-items: center;
+                flex-wrap: wrap;    
+                padding: 50px 0;
+            }
+            .text-col{
+                flex-basis: 50%;
+                margin-bottom: 20px;
+            }
+            .img-col{
+                flex-basis: 50%;
+                margin-bottom: 20px;
+                filter: brightness(120%);
+                filter: contrast(120%);
+                filter: drop-shadow(10px 10px 10px grey);
+            }
+            .img-col1{
+                flex-basis: 50%;
+                margin-bottom: 20px;
+                filter: brightness(120%);
+                filter: contrast(120%);
+                filter: drop-shadow(10px 10px 10px grey);
+            }
+            .img-col img{
+                display: block;
+                width: 90%;
+                margin: auto;
+            }
+            .features h2{
+                font-size: 50px;
+                font-weight: 600;
+                margin-bottom: 20px;
+            }
+            .footer{
+                padding: 50px 15% 10px;
+                border-top: 3px solid black;
+                color: #777;
+                background-color: black;
+            
+            }
+            .footer h2{
+                font-size: 18px;
+                font-weight: 400;
+                margin-bottom: 30px;
+            }
+            .footer .col{
+                flex-basis: 25%;
+                flex-grow: 1;
+                margin-bottom: 20px;
+            }
+            .footer .col a{
+                display: block;
+                text-decoration: none;
+                color: #777;
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+            .footer .row{
+                align-items: flex-start;
+                padding: 10px 0;
+            }
+            .copyright-txt{
+                font-size: 14px;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+            .navbar {
+            position: relative;
+            z-index: 1000;
+        }
+
+        .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            position: static;
+            float: none;
+        }
+        </style>
+        
+    </head>
+    <body>  
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nb">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="Homepage.html">Home</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="Popular.html" id="nvb">Popular</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="About Us.html" id="nvb">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="About Us.html" id="nvb">About Us</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Choose a Genre
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="Adventure.html">Adventure</a></li>
+                      <li><a class="dropdown-item" href="Romance.html">Romance</a></li>
+                      <li><a class="dropdown-item" href="Fiction.html">Fiction</a></li>
+                      <li><a class="dropdown-item" href="Non-Fiction.html">Non-Fiction</a></li>
+                      <li><a class="dropdown-item" href="Thriller.html">Thriller</a></li>
+                      <li><a class="dropdown-item" href="Murder Mystery.html">Murder-Mystery</a></li>
+                      <li><a class="dropdown-item" href="Mythology.html">Mythology</a></li>
+                    </ul>
+                  </li>
+
+                  
+                </ul>
+                <ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="Sign Up.html" id="signup">Sign Up</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Login.html" id="login">Login</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        
+            <div class="header-content">
+                <h1>The E-Library Enclave<br><br></h1>
+                <h3>"A library for avid readers and vivid dreamers"</h3>
+                <form class="serach">
+                    <input class = search-input type = "search" placeholder="Search" required>
+                    <button class = searchbut type = "search">Search</button>
+                </form>
+            </div>
+
+            <div class="features">
+                <div class="row">
+                    <div class="text-col">
+                        <h2>The Maidens.</h2>
+                        <p>In The Maidens, Mariana finds herself the on idyllic campus of Cambridge University after her niece Zoe's closest friend, Tara, has been murdered. Zoe believes the murderer is Professor Edward Fosca, the handsome and popular Greek tragedy professor on campus.</p>
+                    </div>
+                    <div class="img-col">
+                        <img id="image" src="disbook1.png">
+                    </div>
+
+                    <div class="img-col1">
+                        <img src="disbook2.png">
+                    </div>
+                    <div class="text-col">
+                        <h2>Shri Atmasiddhi Shastra.</h2>
+                        <p>Atmasiddhi Shastra is a 142-verse masterpiece, composed by 19th century self-realised saint Shrimad Rajchandraji in a single sitting of about 1.5 hours when He was only 28 years old. Quenching the genuine thirst of a seeker, Shrimadji shares six spiritual truths in this clearest, most cogent outline of the path.</p>
+                    </div>
+
+                    <div class="text-col">
+                        <h2>Relativity:The Special and the General Theory.</h2>
+                        <p>According to Einstein himself, this book is intended "to give an exact insight into the theory of Relativity to those readers who, from a general scientific and philosophical point of view, are interested in the theory, but who are not conversant with the mathematical apparatus of theoretical physics."</p>
+                    </div>
+                    <div class="img-col">
+                        <img src="disbook3.png">
+                    </div>
+
+                    <div class="img-col1">
+                        <img src="disbook4.png">
+                    </div>
+                    <div class="text-col">
+                        <h2>The Egyptian Book of the Dead.</h2>
+                        <p>The Egyptian Book of the Dead is a collection of mortuary texts to help the Egyptian soul navigate through the afterworld. There are several collections of these mortuary texts, the oldest being the Pyramid Texts and later the Coffin Texts commissioned by noblemen for their tombs.</p>
+                    </div>
+
+                    <div class="text-col">
+                        <h2>Tender Lions.</h2>
+                        <p>Written by a father and son team, it is raw, funny, warm, and tender—and unafraid of difficult topics like: developing a healthy self-concept; being vulnerable and authentic; why having roots and rituals with your son is so important; why unconditional love is more important than a competitive spirit.</p>
+                    </div>
+                    <div class="img-col">
+                        <img src="disbook5.png">
+                    </div>
+
+                </div>
+            </div>
+                    <div class="footer">
+                        <h2>Questions? Call 1637-2145-6780</h2>
+                    
+                        <div class="row">
+                            <div class="col">
+                                <h4>Help</h4>
+                                <a href="Feedback Form.html">Feedback Form</a>
+                                <a href="About Us.html">About us</a>
+                                <a href="About Us.html">Contact us</a>
+                            </div>
+                            <div class="col">
+                                <h4>Our Socials</h4>
+                                <a href="https://www.instagram.com/virat.kohli/?hl=en">Instagram</a>
+                                <a href="https://twitter.com/elonmusk?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a>
+                                <a href="https://www.facebook.com/zuck/">Facebook</a>
+                            </div>
+                            <div class="col">
+                                <h4>About Developers</h4>
+                                <a href="About Us.html">Vedant Belsare</a>
+                                <a href="About Us.html">Aditya Shah</a>
+                                <a href="About Us.html">Siddh Foria</a>
+                                <a href="About Us.html">Kshitij Mohite</a>
+                            </div>
+                        </div>
+                        <p class="copyright-txt">By Enclave team</p>
+                    </div>
+
+                    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-MBgbqDO1InVPqPnLd5f9TLve9Dgra3lL2pq8x7WUMIoCjEh9QgU5qL2bvr49D+CN" crossorigin="anonymous"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                    <script type="text/javascript">
+                        function goToNewPage() {
+                            var url = document.getElementById('list').value;
+                            if(url != 'none') {
+                                window.location = url;
+                            }
+                        }
+                    </script>
+        
+    </body>
+</html>
